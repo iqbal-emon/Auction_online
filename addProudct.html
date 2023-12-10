@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Product Auction Form</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <form   id="myForm" name="myform"  enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="productCategory">Product Category</label>
+                <input type="text" class="form-control" id="productCategory" name="Category" placeholder="Enter Product Category">
+            </div>
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input   name="Title" type="text" class="form-control" id="productName" placeholder="Enter Product Name">
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Product Price</label>
+                <input  name="ReservePrice" type="number" class="form-control" id="productPrice" placeholder="Enter Product Price">
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Description</label>
+                <textarea  name="Description" class="form-control" id="productDescription" rows="3" placeholder="Enter Product Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Image URL</label>
+                <input  name="ImageURL" type="file" class="form-control" id="productImage" placeholder="Enter Image URL">
+            </div>
+            <div class="form-group">
+                <label for="auctionStartDate">Auction Start Date and Time</label>
+                <input name="StartTime" type="datetime-local" class="form-control" id="auctionStartDate">
+            </div>
+            <div class="form-group">
+                <label for="auctionEndDate">Auction End Date and Time</label>
+                <input name="EndTime" type="datetime-local" class="form-control" id="auctionEndDate">
+            </div>
+            <input type="hidden" id="userId" name="UserID" value="1" />
+            <input type="hidden" id="userId" name="ItemID" value="1" />
+
+            <button id="addProudct1" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./addProduct.js"></script>
+    
+</body>
+
+</html>
