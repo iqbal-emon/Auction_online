@@ -1,13 +1,15 @@
+
+
 const addProductButton = document.getElementById("addProudct1");
 
 
 addProductButton.addEventListener('click', function () {
     const formData = new FormData(document.getElementById('myForm'));
 
-    // formData.forEach(function (value, key) {
-    //     console.log(key + ": " + value);
-    //     alert(key + ": " + value);
-    // });
+    formData.forEach(function (value, key) {
+        // console.log(key + ": " + value);
+        // alert(key + ": " + value);
+    });
     
  
     // Rest of your code...
@@ -19,6 +21,8 @@ addProductButton.addEventListener('click', function () {
         method: 'POST',
         body: formData,
     })
+
+
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -32,6 +36,7 @@ addProductButton.addEventListener('click', function () {
         })
         .catch(error => {
             // Handle errors
-            console.error('Error:', error);
+            // console.error('Error:', error);
+            alert(error);
         });
 });
