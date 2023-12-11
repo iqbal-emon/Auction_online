@@ -8,7 +8,7 @@ addProductButton.addEventListener('click', function () {
 
     formData.forEach(function (value, key) {
         // console.log(key + ": " + value);
-        // alert(key + ": " + value);
+        alert(key + ": " + value);
     });
     
  
