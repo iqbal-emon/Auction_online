@@ -24,7 +24,7 @@ logInSubmit.addEventListener('click', function () {
 
                 }
                 else{
-                    alert("not successfull");
+                    // alert("not successfull");
                 
                 }
                 
