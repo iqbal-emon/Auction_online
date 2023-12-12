@@ -1,6 +1,13 @@
+var userId = sessionStorage.getItem('userId');
+// alert(userId);
+// Get the value of the 'id' query parameter from the URL
+// var userId = getParameterByName('id');
+
+// Now you can use the productId in your displayProduct.html page
+// alert(userId);
 
 
-fetch('https://localhost:7189/Home/GetAllDetails')
+fetch(`https://localhost:7189/Home/GetAllDetails/${userId}`)
         .then(response => {
             console.log("Raw Response:", response);
 
@@ -41,8 +48,8 @@ var tdReserverPrice = document.createElement('td');
 tdReserverPrice.setAttribute('id', 'ReserverPrice');
 
 var tdImage = document.createElement('td');
-tdImage.setAttribute('id', 'Image1');
-
+tdImage.setAttribute('id', 'ImageField');
+var imgElement = document.createElement('img');
 var tdStartTime = document.createElement('td');
 tdStartTime.setAttribute('id', 'StartTime');
 
@@ -52,7 +59,13 @@ tdTitle.textContent=item.title;
 tdTitle.textContent=item.title;
 tdDescription.textContent=item.description;
 tdCategory.textContent=item.category;
-tdImage.textContent=item.imagUrl;
+imgElement.height = 70;
+imgElement.width = 80;
+imgElement.style.borderRadius = '10px';
+// tdImage.src = 'data:image/png;base64,' + item.imageField;
+imgElement.src = 'data:image/png;base64,' + item.imageField;
+tdImage.appendChild(imgElement);
+console.log(item.imageField);
 tdStartTime.textContent=item.startTime;
 tdEndTime.textContent=item.endTime;
 ItemId.textContent=item.itemID1;

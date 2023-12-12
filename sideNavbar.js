@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./loginPage.html">
-                            Log Out
-                            </a>
-                        </li>
+    <button class="nav-link btn" id="Logout">
+        Log Out
+    </button>
+</li
                     </ul>
                 </div>
             </nav>
@@ -45,6 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (navbarContainer) {
                 navbarContainer.innerHTML = navbar;
           }
-
-    
+          var userId = sessionStorage.getItem('userId');
+const logOut=document.getElementById("Logout");
+logOut.addEventListener('click',function(){
+    window.location.href = './loginPage.html';
+    alert(userId);
+    sessionStorage.removeItem('userId');
+    alert(userId);
+})
+          
 });

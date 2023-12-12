@@ -14,7 +14,7 @@
 
     </div>
     <div class="container mt-5">
-        <form   id="myForm" name="myform"   enctype="multipart/form-data">
+        <form   id="myForm"  name="myForm"  enctype="multipart/form-data"   method="POST" action="./productShow.html" >
             <div class="form-group">
                 <label for="productName">Product Title</label>
                 <input   name="Title" type="text" class="form-control" id="productName" placeholder="Enter Product Name">
@@ -44,8 +44,8 @@
                 <label for="auctionEndDate">Auction End Date and Time</label>
                 <input name="EndTime" type="datetime-local" class="form-control" id="auctionEndDate">
             </div>
-            <input type="hidden" id="userId" name="UserID" value="1" />
-            <input type="hidden" id="userId" name="ItemID" value="1" />
+            <input type="hidden" id="userId" name="UserID" value="" />
+            <input type="hidden" id="userId1" name="ItemID" value="1" />
 
             <button id="addProudct1" type="submit" class="btn btn-primary">Submit</button>
         </form>

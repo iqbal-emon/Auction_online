@@ -1,5 +1,3 @@
-
-
 const SingUpBtn = document.getElementById("signUP");
 
 
@@ -7,10 +5,10 @@ SingUpBtn.addEventListener('click', function () {
     // alert("clicked the btn");
    
     const formData = new FormData(document.getElementById('myForm'));
-    // formData.forEach(function (value, key) {
-    //     // console.log(key + ": " + value);
-    //     alert(key + ": " + value);
-    // });
+    formData.forEach(function (value, key) {
+        // console.log(key + ": " + value);
+        alert(key + ": " + value);
+    });
     
  
     // Rest of your code...

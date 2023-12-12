@@ -16,11 +16,16 @@ logInSubmit.addEventListener('click', function () {
         })
         .then(data => {
             console.log("Data received successfully:");
-            console.log(data);
-            console.log(getName.value);
+            // alert(data);
+            // console.log(getName.value);
             data.forEach(element => {
                 if(element.username===getName.value&&element.password===getpassword.value){
-                     window.location.href = './displayProduct.html';
+                    const id=element.userID;
+                   // Set userId in session storage
+var userId = element.userID; // Replace with your actual userId
+sessionStorage.setItem('userId', userId);
+
+                     window.location.href = './productShow.html?id='+encodeURIComponent(id);
 
                 }
                 else{
