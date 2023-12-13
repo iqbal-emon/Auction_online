@@ -48,12 +48,41 @@
           </div>
           <!-- Bidding Section -->
           <div class="mt-3">
+
+            <table class="table" id="myTable">
+              <thead>
+                  <tr>
+                      <th scope="col">Price</th>
+                      <th scope="col">Bid Time</th>
+                      <th scope="col">Customer</th>
+                   
+      
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr id="tr1">
+                     
+      
+      
+                  </tr>
+                 
+                  <!-- Add more rows as needed -->
+              </tbody>
+          </table>
+
+
             <h6>Value must be greater than or equal to ></span></h6>
-            <form>
+            <form id="myForm">
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter Price" aria-label="Bid price" aria-describedby="button-addon2">
+                <input type="text" name="Amount" class="form-control" placeholder="Enter Price" aria-label="Bid price" aria-describedby="button-addon2">
+                <input type="hidden" id="userId" name="CustomerID" value="" />
+            <input type="hidden" id="userId1" name="ItemID" value="" />
+           
+            <input name="BidTime" type="hidden" class="form-control" id="auctionStartDate">
+
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">SUBMIT</button>
+                  <button class="btn btn-outline-secondary"  type="button" id="biit" >SUBMIT</button>
+
                 </div>
               </div>
             </form>
