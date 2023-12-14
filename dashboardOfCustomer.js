@@ -4,7 +4,7 @@ let container2=document.getElementById("container");
 const currentDate = new Date();
 // const currentDate = new Date();
 currentDate.setHours(currentDate.getHours() + 6);
-alert(currentDate);
+// alert(currentDate);
 // Format the date in "YYYY-MM-DDTHH:mm:ss" format
 // const formattedDateTime = currentDate.toISOString().slice(0, 19).replace("T", " ");
 
@@ -42,7 +42,7 @@ fetch("https://localhost:7189/Home/showAllProducts")
             console.log(data);
          
             data.forEach((data1, index) => {
-              alert("data"+new Date(data1.startTime));
+              // alert("data"+new Date(data1.startTime));
               if(currentDate> new Date(data1.startTime)){
 
                

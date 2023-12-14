@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 minimumPrice=document.getElementById("minimumPrice");
 const tbody = document.createElement('tbody');
+inputPrice=document.getElementById("Amount1");
 function setupPage() {
     const itemID4 = sessionStorage.getItem('selectedProduct');
     const CustomerID = sessionStorage.getItem('CustomerID');
@@ -25,9 +26,10 @@ function setupPage() {
     // Load initial bids when the page loads
     fetchBids(itemID4);
 }
+let finalPrice;
 function PriceShow(data){
     minimumPrice.innerHTML=data;
-
+return data;
 }
 
 function fetchItemData(itemID4) {
@@ -58,8 +60,18 @@ function displayItemData(data) {
 function setupBidEventListener() {
     const biit = document.getElementById("biit");
     biit.addEventListener('click', () => {
-        submitBid();
-        alert("Your Bid is Added")
+        if(inputPrice.value>priceContainer)
+        {
+
+
+            submitBid();
+            alert("Your Bid is Added")
+        }
+        else{
+            alert(inputPrice.value);
+            alert("min"+priceContainer)
+            alert("More then Max Price");
+        }
 
     });
 }
@@ -118,7 +130,7 @@ function displayBids(data) {
     tbody.textContent=null;
     const CustomerID = sessionStorage.getItem('CustomerID');
     data.sort((a, b) => b.amount - a.amount);
-PriceShow(data[0].amount);
+    priceContainer=PriceShow(data[0].amount);
     data.forEach(item => {
         var tr = document.createElement('tr');
         tr.setAttribute('id', 'tr1');
