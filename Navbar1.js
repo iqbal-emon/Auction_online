@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar = `
 <div class="row">
             <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar  ">
-                <div class="position-sticky h-full col-lg-3 ">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar  ">
+                <div class=" h-full col-lg-3 ">
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link active" href="./addProudct.html">

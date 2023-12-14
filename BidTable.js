@@ -55,6 +55,51 @@ function displayItemData(data) {
     priceContainer=PriceShow(data[0].reservePrice);
     let image1 = document.getElementById("image1");
     image1.src = 'data:image/png;base64,' + data[0].imageField;
+    const currentDate = new Date();
+    currentDate.setHours(currentDate.getHours() );
+    alert(currentDate);
+    alert("endTime:"+new Date(data[0].endTime));
+
+
+    function updateTimer() {
+        const currentTime = new Date();
+        const timeDifference = new Date(data[0].endTime) - currentTime;
+    
+        // Check if the timer has reached zero
+        if (timeDifference <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById("timeShow").innerHTML = "Timer expired!";
+            document.getElementById("Amount1").style.display = "none";
+            document.getElementById("biit").style.display = "none";
+
+
+        } else {
+            // Calculate hours, minutes, and seconds
+            const remainingSeconds = Math.floor(timeDifference / 1000);
+            const hours = Math.floor(remainingSeconds / 3600);
+            const minutes = Math.floor((remainingSeconds % 3600) / 60);
+            const seconds = remainingSeconds % 60;
+    
+            // Display or use the remaining time as needed
+            document.getElementById("timeShow").innerHTML = `${hours}h ${minutes}m ${seconds}s remaining`;
+        }
+    }
+    
+    // Initial call to display the timer
+    updateTimer();
+    
+    // Set up the timer interval to update every second
+    const timerInterval = setInterval(updateTimer, 1000);
+    
+
+    
+
+
+
+
+
+    
+    
 }
 
 function setupBidEventListener() {
@@ -118,6 +163,7 @@ function fetchBids(itemID4) {
         })
         .then(data => {
             displayBids(data);
+            // console.data(data);
         })
         .catch(error => {
             console.error('Error fetching bids:', error);
@@ -126,6 +172,7 @@ function fetchBids(itemID4) {
 
 
 function displayBids(data) {
+    // console.log(data);
     
     tbody.textContent=null;
     const CustomerID = sessionStorage.getItem('CustomerID');

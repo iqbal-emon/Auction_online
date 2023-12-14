@@ -28,7 +28,18 @@
     /* margin-left: 5px; */
 
 }
-
+.sticky-div {
+    position: sticky;
+    top: 0; /* Adjust the top value as needed */
+    background-color: #f1f1f1; /* Add background color if desired */
+    padding: 15px; /* Add padding for styling */
+  }
+  .scrollable-div {
+    max-height: 200px; /* Set your desired max height */
+    overflow: auto;
+  }
+  
+  
 .titileshow{
     /* font-weight: bolder; */
 }
@@ -87,7 +98,10 @@
     font-size: larger;
     font-size: 25px;
 }
-
+.nav-item:hover{
+background-color: antiquewhite;
+    
+}
 .style1 {
     /* margin-left: 150px; */
     position: relative;
@@ -580,7 +594,11 @@ footer {
 
 }
 
-
+#nav1{
+   /* padding-top: 30%;  */
+   background-color: rgb(48, 62, 83);
+color: white;
+}
 
 /* a:hover {
     padding-bottom: 10px;
