@@ -1,6 +1,17 @@
 var CustomerID = sessionStorage.getItem('CustomerID');
 // alert(CustomerID);
 let container2=document.getElementById("container");
+const currentDate = new Date();
+// const currentDate = new Date();
+currentDate.setHours(currentDate.getHours() + 6);
+alert(currentDate);
+// Format the date in "YYYY-MM-DDTHH:mm:ss" format
+// const formattedDateTime = currentDate.toISOString().slice(0, 19).replace("T", " ");
+
+// alert(formattedDateTime);
+// const formattedDateObject = new Date(formattedDateTime);
+// const data1StartTimeObject = new Date(data1.startTime);
+
 const handleButtonClick = (data1,selectedProduct) => {
   // Store only the card index in sessionStorage
   sessionStorage.setItem('selectedProduct', data1.itemID1);
@@ -31,6 +42,9 @@ fetch("https://localhost:7189/Home/showAllProducts")
             console.log(data);
          
             data.forEach((data1, index) => {
+              alert("data"+new Date(data1.startTime));
+              if(currentDate> new Date(data1.startTime)){
+
                
                     const card = document.createElement('div');
                     card.classList.add('card');
@@ -70,7 +84,9 @@ fetch("https://localhost:7189/Home/showAllProducts")
                     card.appendChild(subtitle);
                     card.appendChild(btn12);
                     container2.appendChild(card);
+                  }
                   });
+                  
                   var observerOptions = {
                       root: null,
                       rootMargin: '0px',
@@ -102,16 +118,17 @@ fetch("https://localhost:7189/Home/showAllProducts")
                   
                   
                   
+        
                   
                   
+
+
+
                   
-
-
-
-
-            
+                     
           
         })
+      
         .catch(error => {
             console.error('Error fetching data:', error);
         });

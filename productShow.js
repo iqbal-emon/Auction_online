@@ -18,6 +18,7 @@ fetch(`https://localhost:7189/Home/GetAllDetails/${userId}`)
             return response.json(); // assuming the response is in JSON format
         })
         .then(data => {
+        
             console.log("Data received successfully:");
             console.log(data);
          
