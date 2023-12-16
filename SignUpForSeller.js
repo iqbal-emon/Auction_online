@@ -1,10 +1,11 @@
 const SingUpBtn = document.getElementById("signUP");
 
 
-SingUpBtn.addEventListener('click', function () {
+SingUpBtn.addEventListener('click', function (event) {
     // alert("clicked the btn");
    
     const formData = new FormData(document.getElementById('myForm'));
+    event.preventDefault();
     formData.forEach(function (value, key) {
         // console.log(key + ": " + value);
         alert(key + ": " + value);
@@ -30,7 +31,8 @@ SingUpBtn.addEventListener('click', function () {
             return response.text();
         })
         .then(data => {
-            window.location.href = './loginPage.html'
+            
+            window.location.href = 'http://127.0.0.1:5500/loginPage.html'
             // Handle successful response from the API
             console.log('Success:', data);
             // You might want to do something with the success response

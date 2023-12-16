@@ -7,7 +7,20 @@ var userId = sessionStorage.getItem('userId');
 let userId1=document.getElementById("userId");
 userId1.value=userId;
 const addProductButton = document.getElementById("addProudct1");
-
+const startDateTimeInput = document.getElementById('auctionStartDate');
+const endDateTimeInput = document.getElementById('auctionEndDate');
+const isLoggedIn = localStorage.getItem('isLoggedIn');
+alert(isLoggedIn);
+if (!isLoggedIn || isLoggedIn !== 'true') {
+    // Redirect to the login page if not logged in
+    window.location.href = './loginPage.html';
+} else {
+startDateTimeInput.addEventListener('input', function () {
+    // Set the minimum value of the end date input to be greater than the start date
+    endDateTimeInput.min = startDateTimeInput.value;
+    
+    
+});
 
 addProductButton.addEventListener('click', function (event) {
     const formData = new FormData(document.getElementById('myForm'));
@@ -49,3 +62,4 @@ addProductButton.addEventListener('click', function (event) {
             alert(error);
         });
 });
+}

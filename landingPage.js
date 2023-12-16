@@ -18,22 +18,33 @@ logInSubmit.addEventListener('click', function () {
             console.log("Data received successfully:");
             // alert(data);
             // console.log(getName.value);
+            let flag=0;
+            let counter=0;
+            localStorage.setItem('isLoggedIn', 'false');
             data.forEach(element => {
+counter++;
+
                 if(element.username===getName.value&&element.password===getpassword.value){
                     const id=element.userID;
                    // Set userId in session storage
-var userId = element.userID; // Replace with your actual userId
-sessionStorage.setItem('userId', userId);
-
+    var userId = element.userID; // Replace with your actual userId
+    localStorage.setItem('isLoggedIn', 'true');
+    sessionStorage.setItem('userId', userId);
                      window.location.href = './productShow.html?id='+encodeURIComponent(id);
 
                 }
                 else{
                     // alert("not successfull");
-                
+                flag++;
                 }
                 
             });
+            if(flag===counter)
+            {
+    // localStorage.setItem('isLoggedIn', 'false');
+
+                document.getElementById("loginFailed").textContent="Incorrect Password";
+            }
           
         })
         .catch(error => {

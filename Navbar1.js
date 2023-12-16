@@ -45,6 +45,35 @@ document.addEventListener("DOMContentLoaded", function () {
             if (navbarContainer) {
                 navbarContainer.innerHTML = navbar;
           }
+          const navbarLinks = document.querySelectorAll('.nav-item');
+alert("hello");
+          const handleLinkClick = (event) => {
+              // event.preventDefault();
+            // var linkTag = document.getElementsByTagName("a");
+            
+              // Reset the color of all links to white
+            navbarLinks.forEach(link => {
+             
+                // link.style.color = 'white';
+            link.style.borderBottom = 'none';
+                
+              });
+      event.target.style.paddingBottom = '10px';
+              // Set the color of the clicked link to blue
+            event.target.style.borderBottom = '4px solid white';
+          };
+      
+          // Add click event listener to each link in the '.navbar2' container
+          navbarLinks.forEach(link => {
+              link.addEventListener('click', handleLinkClick);
+          });
+      
+
+
+
+
+
+          
           var userId = sessionStorage.getItem('CustomerID');
 const logOut=document.getElementById("Logout");
 logOut.addEventListener('click',function(){

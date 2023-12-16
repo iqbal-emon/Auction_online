@@ -5,8 +5,12 @@ var userId = sessionStorage.getItem('userId');
 
 // Now you can use the productId in your displayProduct.html page
 // alert(userId);
-
-
+const isLoggedIn = localStorage.getItem('isLoggedIn');
+alert(isLoggedIn);
+if (!isLoggedIn || isLoggedIn !== 'true') {
+    // Redirect to the login page if not logged in
+    window.location.href = './loginPage.html';
+} else {
 fetch(`https://localhost:7189/Home/GetAllDetails/${userId}`)
         .then(response => {
             console.log("Raw Response:", response);
@@ -98,3 +102,7 @@ document.getElementById('myTable').appendChild(tbody);
             console.error('Error fetching data:', error);
         });
 
+    }
+    // else{
+    //     window.location.href="./loginPage.html"
+    // }

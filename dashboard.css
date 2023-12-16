@@ -99,7 +99,8 @@
     font-size: 25px;
 }
 .nav-item:hover{
-background-color: antiquewhite;
+background-color:#3b3e5d;
+border-radius: 10px;
     
 }
 .style1 {
