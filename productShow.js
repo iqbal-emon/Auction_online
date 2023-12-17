@@ -7,10 +7,12 @@ var userId = sessionStorage.getItem('userId');
 // alert(userId);
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 alert(isLoggedIn);
+
+
 if (!isLoggedIn || isLoggedIn !== 'true') {
     // Redirect to the login page if not logged in
     window.location.href = './loginPage.html';
-} else {
+} else{
 fetch(`https://localhost:7189/Home/GetAllDetails/${userId}`)
         .then(response => {
             console.log("Raw Response:", response);
@@ -85,6 +87,25 @@ tr.appendChild(tdReserverPrice);
 tr.appendChild(tdImage);
 tr.appendChild(tdStartTime);
 tr.appendChild(tdEndTime);
+var button = document.createElement("button");
+
+// Set the button attributes
+button.setAttribute("type", "button");
+button.setAttribute("class", "btn btn-primary");
+button.setAttribute("data-toggle", "modal");
+button.setAttribute("data-target", "#productModal");
+
+// Set the button text
+button.textContent = "Update";
+button.addEventListener('click',()=>{
+
+})
+
+// Append the button to the body (or any other desired element)
+tr.appendChild(button);
+
+
+
 
 // Append tr element to tbody element
 tbody.appendChild(tr);
