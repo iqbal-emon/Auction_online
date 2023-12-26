@@ -17,29 +17,47 @@ logInSubmit.addEventListener('click', function () {
         .then(data => {
             console.log("Data received successfully:");
             // alert(data);
-            console.log(data);
+            // console.log(data);
+            let flag=0;
+            let counter=0;
     // localStorage.setItem('isLoggedIn1', 'false');
 
             // console.log(getName.value);
             data.forEach(element => {
+counter++;
+
                 if(element.username===getName.value&&element.password===getpassword.value&&element.flag==""){
                     const id=element.customerID;
-                 alert(id);
+                //  alert(id);
     var CustomerID = element.customerID; // Replace with your actual userId
     sessionStorage.setItem('CustomerID', CustomerID);
     localStorage.setItem('isLoggedIn1', 'true');
     let status1 = localStorage.getItem('isLoggedIn1');
-    alert(status1);
+    // alert(status1);
     
 
                      window.location.href = './dashboardOfCustomer.html?id='+encodeURIComponent(id);
 
                 }
+                else if(element.username===getName.value&&element.password===getpassword.value&&element.flag=="1"){
+                    document.getElementById("loginFailed").textContent="Banned By Admin";
+                    document.getElementById("loginFailed").style.color="red";
+                }
                 else{
                     // alert("not successfull");
+                flag++;
+
                 
                 }
-                
+                if(flag===counter)
+                {
+        // localStorage.setItem('isLoggedIn', 'false');
+    
+                    document.getElementById("loginFailed").textContent="Incorrect Password";
+                    document.getElementById("loginFailed").style.color="red";
+    
+                }
+              
             });
           
         })

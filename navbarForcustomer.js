@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul class="nav flex-column" >
                 <li class="nav-item d-flex  align-items-center" style="color: white;font-size:22px;">
                 <a class="nav-link active text-white" href="./dashboardOfCustomer.html">
-                <i class="bi bi-plus"></i>
+                <i class="bi bi-list"></i>
                     Dashboard
                 </a>
                 </li>
                 
                 <li class="nav-item d-flex  align-items-left" style="color: white;font-size:22px;">
                 <a class="nav-link text-white" href="./search.html">
-                <i class="bi bi-list"></i>
+                <i class="bi bi-search"></i>
                     Search Product
                 </a>
                 </li>

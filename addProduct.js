@@ -120,7 +120,7 @@ data.forEach((element) => {
                     .catch(error => {
                         // Handle errors
                         // console.error('Error:', error);
-                        alert(error);
+                        alert("Check All Input Field");
                     });
                 
                
@@ -133,7 +133,7 @@ data.forEach((element) => {
                     window.location.href = 'http://127.0.0.1:5500/productShow.html';
                    event.preventDefault();
     
-                   alert("You Blocked by Admin");
+                   alert("Add Product Banned Admin");
                 }
 
             

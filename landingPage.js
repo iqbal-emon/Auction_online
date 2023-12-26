@@ -33,6 +33,10 @@ counter++;
                      window.location.href = './productShow.html?id='+encodeURIComponent(id);
 
                 }
+                else if(element.username===getName.value&&element.password===getpassword.value&&element.flag=="1"){
+                    document.getElementById("loginFailed").textContent="Banned By Admin";
+                    document.getElementById("loginFailed").style.color="red";
+                }
                 else{
                     // alert("not successfull");
                 flag++;
@@ -44,6 +48,8 @@ counter++;
     // localStorage.setItem('isLoggedIn', 'false');
 
                 document.getElementById("loginFailed").textContent="Incorrect Password";
+                document.getElementById("loginFailed").style.color="red";
+
             }
           
         })

@@ -7,6 +7,35 @@ var userId = sessionStorage.getItem('userId');
 // alert(userId);
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 // alert(isLoggedIn);
+const allcategory=document.getElementById("allcategory");
+fetch("https://localhost:7189/getCategory")
+        .then(response => {
+            console.log("Raw Response:", response);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            return response.json(); // assuming the response is in JSON format
+        })
+        .then(data1 => {
+        
+            console.log("Data received successfully:");
+            console.log(data1);
+
+         
+            data1.forEach((data, index) => {
+
+                const allCategoryOption = document.createElement("option");
+                allCategoryOption.id = data.categoryName;
+                allCategoryOption.value = data.categoryName;
+                allCategoryOption.textContent = data.categoryName;
+                allcategory.appendChild(allCategoryOption);
+
+
+
+            });
+        });
 
 
 let updatedBtnclick=(data1,updatedProduct)=>{
@@ -60,10 +89,12 @@ let handleButtonClick1 = (data1,updatedProduct) => {
     sessionStorage.setItem('updatedProduct', data1.itemID1);
 //   alert(data1.itemID1);
   document.getElementById("productName").value=data1.title;
-  document.getElementById("productCategory").value=data1.category;
+  document.getElementById("allcategory").value=data1.category;
   document.getElementById("price").value=data1.reservePrice;
   document.getElementById("description").value=data1.description;
   document.getElementById("imageUpload").src=data1.imageField;
+  
+//   document.getElementById("preview").src='data:image/png;base64,' +data1.imageField;
   document.getElementById("startDate").value=data1.startTime;
   document.getElementById("endDate").value=data1.endTime;
   var trashIcon = document.createElement('i');

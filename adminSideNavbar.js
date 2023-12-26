@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 <li class="nav-item d-flex align-items-center" style="color: white;font-size:22px;">
                 <a class="nav-link text-white" href="./allCustomerShow.html">
-                <i class="bi bi-bell "></i>
+                <i class="bi bi-list"></i>
+
                    Customer Details
                 </a>
                 </li>

@@ -34,7 +34,7 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
             data1.forEach((data, index) => {
                 var emailButton = document.createElement('button');
                 emailButton.setAttribute('id', 'Email');
-
+                emailButton.style.width='100px';
                 // Set text content and class based on the flag value
                 emailButton.textContent = data.flag === '1' ? 'Unbanned' : 'Banned';
                 emailButton.classList.add('btn', data.flag === '1' ? 'btn-danger' : 'btn-primary');
@@ -91,6 +91,8 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                 // Create a new button (Another Action)
                 var anotherButton = document.createElement('button');
                 anotherButton.setAttribute('id', 'AnotherButton1');
+                anotherButton.style.width='100px';
+
                 anotherButton.textContent = data.flag2 === '1' ? 'Unbanned' : 'Banned';
                 anotherButton.classList.add('btn', data.flag2 === '1' ? 'btn-danger' : 'btn-primary');
                 anotherButton.addEventListener('click', function () {

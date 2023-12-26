@@ -31,6 +31,7 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                         return response.json(); // Assuming the response is in JSON format
                     })
                     .then(itemData => {
+                        console.log(itemData);
                         console.log("Data received successfully:");
                         // console.log(itemData);
 

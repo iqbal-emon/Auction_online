@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
 minimumPrice=document.getElementById("minimumPrice");
 const tbody = document.createElement('tbody');
 inputPrice=document.getElementById("Amount1");
+
 function setupPage() {
+    
     const itemID4 = sessionStorage.getItem('selectedProduct');
     const CustomerID = sessionStorage.getItem('CustomerID');
     
@@ -48,7 +50,18 @@ function fetchItemData(itemID4) {
             console.error('Error fetching data:', error);
         });
 }
+function hideElements() {
+    document.getElementById("Amount1").style.display = "none";
+    document.getElementById("biit").style.display = "none";
+    document.getElementById("liveImage").style.display = "none";
+    document.getElementById("liveHeading").style.display = "none";
+
+    
+}
+
 let priceContainer;
+
+
 function displayItemData(data) {
     document.getElementById("price").innerHTML = data[0].reservePrice;
     document.getElementById("title").innerHTML = data[0].title;
@@ -59,7 +72,10 @@ function displayItemData(data) {
     currentDate.setHours(currentDate.getHours() );
     alert(currentDate);
     alert("endTime:"+new Date(data[0].endTime));
-
+    const itemEndTime = new Date(data[0].endTime);
+    if (itemEndTime <= new Date()) {
+        hideElements();
+    }
 
     function updateTimer() {
         const currentTime = new Date();
@@ -69,8 +85,7 @@ function displayItemData(data) {
         if (timeDifference <= 0) {
             clearInterval(timerInterval);
             document.getElementById("timeShow").innerHTML = "Timer expired!";
-            document.getElementById("Amount1").style.display = "none";
-            document.getElementById("biit").style.display = "none";
+            hideElements(); // Call the function to hide elements
         
 
 
@@ -135,17 +150,19 @@ function setupBidEventListener() {
                     
                     else if(element.customerID === CustomerID&&element.flag2==="1"){
                         alert("You banned by Admin");
+                       
                     }
+                    
                 });
                 
 
             
                
             })
+     
            
     });
 }
-
 
 
 

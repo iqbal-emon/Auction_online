@@ -54,6 +54,7 @@
     
                     // Set button attributes
                     emailButton.setAttribute('id', 'Email');
+                    emailButton.style.width='100px';
     
                     if (data.flag === '1') {
                         emailButton.textContent = 'Unbanned';
@@ -117,6 +118,8 @@
     
                     // Set button attributes for the second button
                     emailButton2.setAttribute('id', 'Email2');
+                    emailButton2.style.width='100px';
+
     
                     if (data.flag2 === '1') {
                         emailButton2.textContent = 'Unbanned';
