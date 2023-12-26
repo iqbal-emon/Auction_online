@@ -1,0 +1,10 @@
+.nav-link {
+    color: none;
+    font-weight:600;
+ } /* Default color for links */
+.nav-link.active {
+    background-color:white; /* Change this to your desired active color */
+    width: 100%;
+   color: rgb(108,117,125) !important;
+   border-radius: 12px;
+}

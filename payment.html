@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Transaction Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <!-- Navigation Bar to indicate progress -->
+  <ul class="nav nav-pills mb-3">
+    <li class="nav-item">
+      <a class="nav-link active" href="#transaction1" data-bs-toggle="pill">Transaction 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#transaction2" data-bs-toggle="pill">Transaction 2</a>
+    </li>
+  </ul>
+
+  <!-- Multi-Transaction Form -->
+  <form id="multi-transaction-form">
+    <div class="tab-content">
+      <!-- Transaction 1 Section -->
+      <div class="tab-pane fade show active" id="transaction1">
+        <div class="mb-3">
+          <label for="card-element-1" class="form-label">Credit or debit card (Transaction 1)</label>
+          <div id="card-element-1" class="form-control">
+            <!-- A Stripe Element will be inserted here. -->
+          </div>
+          <div id="card-errors-1" role="alert" class="mt-2"></div>
+        </div>
+      </div>
+
+      <!-- Transaction 2 Section -->
+      <div class="tab-pane fade" id="transaction2">
+        <div class="mb-3">
+          <label for="card-element-2" class="form-label">Credit or debit card (Transaction 2)</label>
+          <div id="card-element-2" class="form-control">
+            <!-- A Stripe Element will be inserted here. -->
+          </div>
+          <div id="card-errors-2" role="alert" class="mt-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="mt-3">
+      <button type="button" class="btn btn-primary" id="prev-button">Previous</button>
+      <button type="button" class="btn btn-primary" id="next-button">Next</button>
+      <button type="button" class="btn btn-success" id="submit-button">Submit Payment</button>
+    </div>
+  </form>
+</div>
+
+<!-- Bootstrap JS and Popper.js (required for Bootstrap JavaScript components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  var stripe = Stripe('pk_test_51OBWxISJSB6vYH5P5ILo8WP2obcdmwx1RXD7RP59eAPgNv3B4sAXvvJu7KCUOAiMrX4H8KvSnTfybhCTZTGwMywi00JBRBhMlJ');
+
+  var elements1 = stripe.elements();
+  var card1 = elements1.create('card');
+  card1.mount('#card-element-1');
+
+  card1.addEventListener('change', function(event) {
+    var displayError = document.getElementById('card-errors-1');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+    }
+  });
+
+  var elements2 = stripe.elements();
+  var card2 = elements2.create('card');
+  card2.mount('#card-element-2');
+
+  card2.addEventListener('change', function(event) {
+    var displayError = document.getElementById('card-errors-2');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+    }
+  });
+
+  var currentTab = 0;
+  var tabs = document.querySelectorAll('.tab-pane');
+
+  function showTab(n) {
+    tabs[n].classList.add('show', 'active');
+  }
+
+  function hideTab(n) {
+    tabs[n].classList.remove('show', 'active');
+  }
+
+  function updateButtons() {
+    document.getElementById('prev-button').style.display = currentTab === 0 ? 'none' : 'inline';
+    document.getElementById('next-button').style.display = currentTab === tabs.length - 1 ? 'none' : 'inline';
+    document.getElementById('submit-button').style.display = currentTab === tabs.length - 1 ? 'inline' : 'none';
+  }
+
+  document.getElementById('next-button').addEventListener('click', function() {
+    hideTab(currentTab);
+    currentTab++;
+    showTab(currentTab);
+    updateButtons();
+  });
+
+  document.getElementById('prev-button').addEventListener('click', function() {
+    hideTab(currentTab);
+    currentTab--;
+    showTab(currentTab);
+    updateButtons();
+  });
+
+  document.getElementById('submit-button').addEventListener('click', function() {
+    // Handle submission of the payment details for both transactions
+    console.log('Payment details submitted for both transactions.');
+    // Implement your logic to send payment details to the server.
+    alert('Payment successful for both transactions!');
+  });
+
+  // Show the first tab on page load
+  showTab(currentTab);
+  updateButtons();
+</script>
+
+</body>
+</html>

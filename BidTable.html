@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antique Car Auction</title>
+<!-- Link to Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <!-- Auction Item Card -->
+  <div class="card">
+    <div class="card-body">
+      <!-- Auction Item Image -->
+      <div class="row">
+        <div class="col-md-6">
+          <img id="image1" src="" class="card-img-top" alt="Antique Car">
+        </div>
+        <div class="col-md-6">
+          <!-- Auction Details -->
+          <h3 id="title" class="card-title">Antique Car</h3>
+          <div style="display: flex;" id="live">
+
+            <img src="./image/Animation - 1703159278041.gif" alt="" height="40px">
+            <h4 style="color: red;margin-top: 4px;">Live</h4>
+        </div>
+          <h3 id="price"></h3>
+          <p>You are a participant of this bidding.</p>
+          <!-- Countdown Timer -->
+          <div class="timer">
+            <h3 class="badge badge-secondary" id="timeShow">Time Expired</h3>
+          </div>
+          <!-- Tabs for additional information -->
+          <ul class="nav nav-tabs" id="auctionTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">History</a>
+            </li>
+            <li class="nav-item">
+            </li>
+            
+            <li class="nav-item">
+            </li>
+          </ul>
+          <div class="tab-content" id="auctionTabContent">
+            <!-- Tab panes -->
+            <!-- ... Your tab pane content here ... -->
+          </div>
+          <!-- Bidding Section -->
+          <div class="mt-3">
+
+            <table class="table" id="myTable">
+              <thead>
+                  <tr>
+                      <th scope="col">Price</th>
+                      <th scope="col">Bid Time</th>
+                      <th scope="col">Customer</th>
+                   
+      
+                  </tr>
+              </thead>
+              <tbody>
+                 
+                 
+                  <!-- Add more rows as needed -->
+              </tbody>
+          </table>
+
+<div class="d-flex">
+  <h6 >Value must be greater than or equal to  </h6>
+  <h6 class="pl-2" id="minimumPrice"> 500</h6>
+</div>
+           
+            <form id="myForm">
+              <div class="input-group mb-3">
+                <input type="text" id="Amount1" name="Amount" class="form-control" placeholder="Enter Price" aria-label="Bid price" aria-describedby="button-addon2">
+                <input type="hidden" id="userId" name="CustomerID" value="" />
+            <input type="hidden" id="userId1" name="ItemID" value="" />
+           
+            <input name="BidTime" type="hidden" class="form-control" id="auctionStartDate">
+
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary"  type="button" id="biit" >SUBMIT</button>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Link to Bootstrap JS and its dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./BidTable.js"></script>
+
+</body>
+</html>
