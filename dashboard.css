@@ -539,7 +539,7 @@ border-radius: 10px;
 }
 
 .allpro {
-    position: relative;
+    /* position: relative; */
     /* padding-top: -10px; */
     /* margin-left: -150px; */
     /* margin-left: -50px; */
@@ -597,7 +597,7 @@ footer {
 
 #nav1{
    /* padding-top: 30%;  */
-   background-color: rgb(48, 62, 83);
+   /* background-color: rgb(48, 62, 83); */
 color: white;
 }
 
@@ -1660,39 +1660,22 @@ label {
 /* Note: These styles might not work in newer versions of Firefox */
 
 
-@media screen and (min-width: 2000px) {
-
-    body {
-        justify-content: center;
-
-    }
-
-    #container4,
-
-    #container2,
-    #container,
-    .features,
-    .car {
-        padding-left: 20%;
-        padding-right: 20%;
-    }
-
-    .lastest {
-        /* margin-right: 400px; */
-    }
-
-    #container3 {
-        padding-left: 20%;
-        padding-right: -40%;
-        width: 72%;
-
-    }
-
-    #Count {
-        margin-left: -150px;
-    }
-    .di{
-        top: 10%;
-        height: 20%;
-    }
+@media screen and (max-width: 1400px) {
+#left{
+    /* background-color: red; */
+    margin-left:30%;
 }
+.left123{
+    margin-left: 20% !important;
+   /* z-index: inherit; */
+}
+
+
+}
+
+
+    
+
+
+
+

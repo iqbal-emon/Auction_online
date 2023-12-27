@@ -1,0 +1,15 @@
+
+/* @media only screen and (min-width: 600px) {
+    #nav1{
+        width:500px;
+        background-color: red;
+    }
+  }
+   */
+  /* Additional styles for screens with a minimum width of 601 pixels */
+  /* @media only screen and (min-width: 601px) {
+    body {
+      background-color: lightgreen;
+    }
+  }
+   */

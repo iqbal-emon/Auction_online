@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = `
-    <div class="h-4 z-index: 2  col-md-3 col-lg-2 sidebar " style="background-color:rgb(108,117,125);height:1000px;position: fixed;">
+    <div class=" col-2 sidebar " style="background-color:rgb(108,117,125);height:1000px;position:fixed;">
     <!-- Sidebar -->
    
        
@@ -8,38 +8,39 @@ document.addEventListener("DOMContentLoaded", function () {
     <img src="./image/image.png" width="80" style="border-radius:50px;" >
     <h5 style="color:white;margin-left:-14px">Auction Pro </h5>
      </div>
-    <nav class="" style="padding-top: 50%">
+    <nav class="w-100" style="padding-top: 50%">
         <div class="">
-            <ul class="nav flex-column" >
-                <li class="nav-item d-flex  align-items-center" style="color: white;font-size:22px;">
-                <a class="nav-link active text-white" href="./dashboardOfCustomer.html">
+        <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active text-white" href="./dashboardOfCustomer.html" style="font-size:20px">
                 <i class="bi bi-list"></i>
-                    Dashboard
-                </a>
-                </li>
-                
-                <li class="nav-item d-flex  align-items-left" style="color: white;font-size:22px;">
-                <a class="nav-link text-white" href="./search.html">
+                <span class="d-none d-md-inline  ">Dashboard</span>
+                <span class="d-md-none">D</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="./search.html" style="font-size:20px">
                 <i class="bi bi-search"></i>
-                    Search Product
-                </a>
-                </li>
-                
-                <li class="nav-item d-flex align-items-center" style="color: white;font-size:22px;">
-                <a class="nav-link text-white" href="./customerBitStatus.html">
-                <i class="bi bi-bell "></i>
-                    Bid Status
-                </a>
-                </li>
-                
-               
-                <li class="nav-item d-flex  align-items-center" style="color: white;font-size:22px;">
-                <button class="nav-link btn  text-white" id="Logout" style="font-size: 22px;" >
+                <span class="d-none d-md-inline">Search Product</span>
+                <span class="d-md-none">S</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="./customerBitStatus.html" style="font-size:20px">
+                <i class="bi bi-bell"></i>
+                <span class="d-none d-md-inline">Bid Status</span>
+                <span class="d-md-none">B</span>
+            </a>
+        </li>
+        <li class="nav-item text-white">
+            <button class="nav-link btn text-white" id="Logout" style="font-size:20px">
                 <i class="bi bi-box-arrow-right"></i>
-                        Log Out
-                    </button>
-                </li>
-            </ul>
+                <span class="d-none d-md-inline">Log Out</span>
+                <span class="d-md-none">L</span>
+            </button>
+        </li>
+    </ul>
+
             
         
     </div>
