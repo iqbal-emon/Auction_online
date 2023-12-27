@@ -1,42 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = `
-    <div class=" col-2 sidebar " style="background-color:rgb(108,117,125);height:1000px;position:fixed;">
+    <div class=" col-2 sidebar " style="background-color:rgb(108,117,125);height:1000px;position:fixed;z-index:10000">
     <!-- Sidebar -->
    
        
-    <div style="margin-top:40px;margin-left:90px;">
-    <img src="./image/image.png" width="80" style="border-radius:50px;" >
-    <h5 style="color:white;margin-left:-14px">Auction Pro </h5>
+    <div id="logo" style="margin-top:40px;margin-left:40%;">
+    <img class="w-sm-2" id="auctionProImg" src="./image/image.png" width="80" style="border-radius:50px;" >
+    <h5 id="auctionPro">Auction Pro </h5>
      </div>
     <nav class="w-100" style="padding-top: 50%">
         <div class="">
         <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active text-white" href="./dashboardOfCustomer.html" style="font-size:20px">
+            <a class="nav-link active text-white" href="./dashboardOfCustomer.html" >
                 <i class="bi bi-list"></i>
-                <span class="d-none d-md-inline  ">Dashboard</span>
-                <span class="d-md-none">D</span>
+                <span class="d-none d-md-inline  md-font-weight-small">Dashboard</span>
+              
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="./search.html" style="font-size:20px">
+            <a class="nav-link text-white text-size-md-10px" href="./search.html" >
                 <i class="bi bi-search"></i>
                 <span class="d-none d-md-inline">Search Product</span>
-                <span class="d-md-none">S</span>
+               
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="./customerBitStatus.html" style="font-size:20px">
+            <a class="nav-link text-white" href="./customerBitStatus.html" >
                 <i class="bi bi-bell"></i>
                 <span class="d-none d-md-inline">Bid Status</span>
-                <span class="d-md-none">B</span>
+             
             </a>
         </li>
         <li class="nav-item text-white">
-            <button class="nav-link btn text-white" id="Logout" style="font-size:20px">
+            <button class="nav-link btn text-white" id="Logout" >
                 <i class="bi bi-box-arrow-right"></i>
                 <span class="d-none d-md-inline">Log Out</span>
-                <span class="d-md-none">L</span>
+          
             </button>
         </li>
     </ul>
