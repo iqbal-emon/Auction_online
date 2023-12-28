@@ -70,8 +70,8 @@ function displayItemData(data) {
     image1.src = 'data:image/png;base64,' + data[0].imageField;
     const currentDate = new Date();
     currentDate.setHours(currentDate.getHours() );
-    alert(currentDate);
-    alert("endTime:"+new Date(data[0].endTime));
+    // alert(currentDate);
+    // alert("endTime:"+new Date(data[0].endTime));
     const itemEndTime = new Date(data[0].endTime);
     if (itemEndTime <= new Date()) {
         hideElements();

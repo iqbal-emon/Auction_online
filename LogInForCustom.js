@@ -53,7 +53,7 @@ counter++;
                 {
         // localStorage.setItem('isLoggedIn', 'false');
     
-                    document.getElementById("loginFailed").textContent="Incorrect Password";
+                    document.getElementById("loginFailed").textContent="Incorrect Information";
                     document.getElementById("loginFailed").style.color="red";
     
                 }

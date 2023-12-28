@@ -16,7 +16,34 @@
   <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg" style="height: 60px;">
     
   </nav> -->
-   
+  <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+  
+              <!-- Modal Header -->
+              <div class="modal-header">
+                  <h4 class="modal-title">Check Mail</h4>
+                  <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+              </div>
+  
+              <!-- Modal Body -->
+              <div class="modal-body">
+                  <label for="inputValue">Enter OTP:</label>
+                  <input type="text" class="form-control" id="inputValue">
+              </div>
+  
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-success" onclick="handleOK()">OK</button>
+                  <button type="button" class="btn btn-secondary" onclick="closeDynamicModal" data-dismiss="modal">Close</button>
+              </div>
+  
+          </div>
+      </div>
+  </div>
 
 
   <div class="container d-flex " >

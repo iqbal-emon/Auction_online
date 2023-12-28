@@ -15,6 +15,8 @@ logInSubmit.addEventListener('click', function () {
             return response.json(); // assuming the response is in JSON format
         })
         .then(data => {
+            let flag=0;
+            let counter=0;
             console.log("Data received successfully:");
             // alert(data);
             console.log(data);
@@ -22,6 +24,8 @@ logInSubmit.addEventListener('click', function () {
 
             // console.log(getName.value);
             data.forEach(element => {
+counter++;
+
                 if(element.username===getName.value&&element.password===getpassword.value){
                 //     const id=element.adminID;
                 //  alert(id);
@@ -38,7 +42,16 @@ logInSubmit.addEventListener('click', function () {
                 }
                 else{
                     // alert("not successfull");
+                    flag++;
                 
+                }
+                if(flag===counter)
+                {
+        // localStorage.setItem('isLoggedIn', 'false');
+    
+                    document.getElementById("loginFailed").textContent="Incorrect Information";
+                    document.getElementById("loginFailed").style.color="red";
+    
                 }
                 
             });
