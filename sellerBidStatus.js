@@ -65,7 +65,8 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                             email1.setAttribute('id', 'email1');
                             var biddingGo = document.createElement('td');
                             biddingGo.setAttribute('id', 'email1');
-
+                            var address = document.createElement('td');
+                            address.setAttribute('id', 'address');
                             // Set content for HTML elements
                             tdTitle.textContent = itemDetail.title;
                             tdImage.height = 70;
@@ -107,8 +108,28 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                                 // biddingGo.style.fontSize = '16px'; // Change '16px' to your desired font size
                                 biddingGo.style.fontWeight = 'bold';
                                 biddingGo.style.color='red';
-
+                                fetch("https://localhost:7189/GetCustomersDetails")
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error(`HTTP error! Status: ${response.status}`);
+                                    }
+                                    return response.json();
+                                })
+                                .then(data1 => {
+                            
+                                    data1.forEach(element => {
+                                        if (element.itemID == item.itemID1) {
+                                            
+                                            // paymentbtn.style.display = 'none';
+                                           biddingGo.textContent=element.otp;
+                                           address.textContent=element.address;
+                                           email1.textContent=element.email;
+                                        }
+                                    });
+                                    // Move the location.href outside the forEach loop
+                                })
                             }
+                          
                             // alert(itemDetail.bidTime);
                             // Append HTML elements to the table row
                             tr.appendChild(ItemId);
@@ -119,6 +140,7 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                             tr.appendChild(customerID1);
                            tr.appendChild(amountPrice);
                            tr.appendChild(email1);
+                           tr.appendChild(address);
 tr.appendChild(biddingGo);
                             // Append table row to the table body
                             tbody.appendChild(tr);

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliveryMan Page</title>
+</head>
+<body>
+
+    <h1>Welcome to the DeliveryMan Page</h1>
+
+    <form id="getCustomersForm">
+        <label for="otpValue">Enter OTP Value:</label>
+        <input type="text" id="otpValue" name="otpValue" required>
+        <button type="button" id="button1">Get Customers</button>
+    </form>
+
+    <div id="customersResult"></div>
+
+    <script>
+        document.getElementById('button1').addEventListener('click', () => {
+            let deliveryman = document.getElementById("otpValue");
+            // alert(deliveryman.value);
+
+            fetch(`https://localhost:7189/GetID/${deliveryman.value}`)
+                .then(response => {
+                    console.log("Raw Response:", response);
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    return response.text();
+                })
+                .then(data1 => {
+                    alert(data1);
+                })
+                .catch(error => {
+                    console.error("Fetch error:", error);
+                });
+        });
+    </script>
+
+</body>
+</html>
