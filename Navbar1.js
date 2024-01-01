@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 navbarContainer.innerHTML = navbar;
           }
           const navbarLinks = document.querySelectorAll('.nav-item');
-alert("hello");
+// alert("hello");
           const handleLinkClick = (event) => {
               // event.preventDefault();
             // var linkTag = document.getElementsByTagName("a");

@@ -35,6 +35,8 @@ body {
 .col-75 {
   -ms-flex: 75%; /* IE10 */
   flex: 75%;
+  margin-left: 3%;
+  margin-right: auto;
 }
 
 .col-25,
@@ -99,6 +101,13 @@ span.price {
   float: right;
   color: grey;
 }
+#hello{
+  margin-left: 25%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-top: 5%;
+  padding-bottom: 3%;
+  /* border-radius: 10px; */
+}
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {
@@ -113,10 +122,10 @@ span.price {
 </head>
 <body>
 
-<h2>Responsive Checkout Form</h2>
-<p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p>
-<div class="row">
-  <div class="col-75">
+  <!-- <p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p> -->
+  <div class="row">
+    <div class="col-50" id="hello">
+    <h2>Give Your Information For Delivery</h2>
     <div class="container">
       <form name="myForm" id="myForm" action="" enctype="multipart/form-data" method="POST">
         <div class="row">
@@ -143,8 +152,8 @@ span.price {
     </div>
   </div>
   <div class="col-25">
-    <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+    <!-- <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>1</b></span></h4>
       <p><a href="#">Product 1</a> <span class="price">$15</span></p>
       <p><a href="#">Product 2</a> <span class="price">$5</span></p>
       <p><a href="#">Product 3</a> <span class="price">$8</span></p>
@@ -152,7 +161,7 @@ span.price {
       <hr>
       <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
     </div>
-  </div>
+  </div> -->
 </div>
 
 </body>

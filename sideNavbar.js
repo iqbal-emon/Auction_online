@@ -98,11 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
 const logOut=document.getElementById("Logout");
 logOut.addEventListener('click',function(){
     window.history.replaceState(null, null, './loginPage.html')
-    alert(userId);
+    // alert(userId);
     sessionStorage.removeItem('userId');
     localStorage.setItem('isLoggedIn', 'false');
-    alert(isLoggedIn);
-    alert(userId);
+    // alert(isLoggedIn);
+    // alert(userId);
     window.location.href = './loginPage.html';
 
 })

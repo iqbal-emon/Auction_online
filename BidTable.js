@@ -63,11 +63,63 @@ let priceContainer;
 
 
 function displayItemData(data) {
+    console.log(data);
     document.getElementById("price").innerHTML = data[0].reservePrice;
     document.getElementById("title").innerHTML = data[0].title;
     priceContainer=PriceShow(data[0].reservePrice);
-    let image1 = document.getElementById("image1");
-    image1.src = 'data:image/png;base64,' + data[0].imageField;
+    // let image1 = document.getElementById("image1");
+    // image1.src = 'data:image/png;base64,' + data[0].imageField;
+    const data1 = [
+        { imageField: data[0].imageField },
+        { imageField: data[0].imageField1 },
+        { imageField: data[0].imageField2 },
+    ];
+
+    const slider = document.querySelector('.carousel-inner');
+
+    data1.forEach((item, index) => {
+        const slide = document.createElement('div');
+        slide.classList.add('carousel-item');
+
+        // Check if item.imageField exists before using it
+        const imageSrc = item.imageField ? `data:image/png;base64,${item.imageField}` : '';
+       
+        slide.innerHTML = `<div style="width: 100%; height: 350px; overflow: hidden; background-image: url('${imageSrc}'); background-size: contain; background-position: center; background-repeat: no-repeat;">
+        </div>`;
+
+
+
+
+
+        
+        slider.appendChild(slide);
+    });
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-item');
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    document.getElementById('btn123').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + data1.length) % data1.length;
+        showSlide(currentIndex);
+    });
+
+    document.getElementById('btn321').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % data1.length;
+        showSlide(currentIndex);
+    });
+
+    showSlide(currentIndex); // Show the initial slide
+
+
     const currentDate = new Date();
     currentDate.setHours(currentDate.getHours() );
     // alert(currentDate);

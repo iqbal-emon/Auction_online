@@ -30,11 +30,11 @@ counter++;
                 //     const id=element.adminID;
                 //  alert(id);
     var CustomerID1 = element.adminID; // Replace with your actual userId
-    alert("customerID+"+CustomerID1);
+    // alert("customerID+"+CustomerID1);
     sessionStorage.setItem('CustomerID', CustomerID1);
     localStorage.setItem('isLoggedIn3', 'true');
     let status1 = localStorage.getItem('isLoggedIn3');
-    alert("islog"+status1);
+    // alert("islog"+status1);
     
 
                      window.location.href = './sellerDetails.html'

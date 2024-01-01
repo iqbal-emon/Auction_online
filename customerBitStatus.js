@@ -46,6 +46,8 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                     paymentbtn.style.marginTop = '4px';
                     paymentbtn.addEventListener('click', function () {
                         localStorage.setItem('PaymentItem', data.itemID);
+                        localStorage.setItem('productName', data.title);
+
                         localStorage.setItem('Amount', data.amount);
                    location.href='./payment.html';
 
@@ -61,7 +63,7 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                     })
                     .then(data1 => {
                         console.log(data1);
-                        alert(data.itemID);
+                        // alert(data.itemID);
                         data1.forEach(element => {
                             if (element.itemID == data.itemID) {
                                 otp1.textContent = element.otp;

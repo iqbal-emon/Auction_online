@@ -1,5 +1,5 @@
 var CustomerID = sessionStorage.getItem('CustomerID');
-alert(CustomerID);
+// alert(CustomerID);
 const isLoggedIn = localStorage.getItem('isLoggedIn1');
 if (!isLoggedIn || isLoggedIn !== 'true') {
 
@@ -22,7 +22,7 @@ currentDate.setHours(currentDate.getHours());
 const handleButtonClick = (data1,selectedProduct) => {
   // Store only the card index in sessionStorage
   sessionStorage.setItem('selectedProduct', data1.itemID1);
-alert(data1.itemID1);
+// alert(data1.itemID1);
   // Construct the URL with query parameters
   // const url = `./BidTable.html?index=${index}&title=${encodeURIComponent(data1.title)}&reservePrice=${encodeURIComponent(data1.reservePrice)}&image=${encodeURIComponent(data1.imageField)}`;
 
