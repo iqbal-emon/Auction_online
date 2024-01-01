@@ -93,6 +93,8 @@ let handleButtonClick1 = (data1,updatedProduct) => {
   document.getElementById("price").value=data1.reservePrice;
   document.getElementById("description").value=data1.description;
   document.getElementById("imageUpload").src=data1.imageField;
+//   document.getElementById("imageUpload").src=data1.imageField;
+
   
 //   document.getElementById("preview").src='data:image/png;base64,' +data1.imageField;
   document.getElementById("startDate").value=data1.startTime;
@@ -121,9 +123,9 @@ trashIcon.style.cursor = 'pointer'; // Add pointer cursor to indicate it's click
     // formData.forEach(function (value, key) {
     //     alert(key + ": " + value);
     // });
-
-    fetch(`https://localhost:7189/Home/UpdateProduct/${data1.itemID1}`, {
-        method: 'POST',
+  
+    fetch(`https://localhost:7189/Home/ProductUpdate/${data1.itemID1}`, {
+        method: 'PUT',
         body: formData,
     })
     .then(response => {
