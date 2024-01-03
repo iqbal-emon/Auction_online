@@ -84,15 +84,48 @@ let updatedBtnclick=(data1,updatedProduct)=>{
 
 
 let handleButtonClick1 = (data1,updatedProduct) => {
+    console.log(data1);
     // Store only the card index in sessionStorage
     // alert("btn there");
     sessionStorage.setItem('updatedProduct', data1.itemID1);
-//   alert(data1.itemID1);
-  document.getElementById("productName").value=data1.title;
-  document.getElementById("allcategory").value=data1.category;
-  document.getElementById("price").value=data1.reservePrice;
-  document.getElementById("description").value=data1.description;
-  document.getElementById("imageUpload").src=data1.imageField;
+    //   alert(data1.itemID1);
+    document.getElementById("productName").value=data1.title;
+    document.getElementById("allcategory").value=data1.category;
+    document.getElementById("price").value=data1.reservePrice;
+    document.getElementById("description").value=data1.description;
+    document.getElementById("imageUpload").src = data1.image1;
+    document.getElementById("imageUpload1").src = data1.image2;
+    document.getElementById("imageUpload2").src = data1.image3;
+
+
+// var currentAnimalImage = document.getElementById("currentAnimalImage");
+// var existingAnimalImageInput = document.getElementById("existingAnimalImage");
+
+// if (data1.image2) {
+//     alert(data1.image2);
+    
+//     currentAnimalImage.src =  `./${data1.image2}`;
+//     currentAnimalImage.style.display = "block";
+//     alert(currentAnimalImage.src );
+//     existingAnimalImageInput.value = data1.image2;
+// } else {
+//     currentAnimalImage.style.display = "none";
+//     existingAnimalImageInput.value = "";
+// }
+
+
+
+
+
+
+
+    // console.log("After setting image sources");
+//  alert( document.getElementById("allcategory"));
+// alert(document.getElementById("imageUpload").alt);
+// alert(data1.image1);
+// alert(data1.image3);
+
+//   alert(data1.image1);
 //   document.getElementById("imageUpload").src=data1.imageField;
 
   
@@ -113,16 +146,24 @@ trashIcon.style.cursor = 'pointer'; // Add pointer cursor to indicate it's click
     document.getElementById('userId').value = data1.itemID1;
     const formData = new FormData(document.getElementById('myForm2'));
     
+    // alert(document.getElementById("imageUpload").src );
+    // alert(document.getElementById("imageUpload1").src );
+    // alert(document.getElementById("imageUpload2").src );
+
+
     // Append the 'userId' value to the FormData object
     formData.append('ItemID', data1.itemID1); // Assuming 'ItemID' is the correct name
-    
+    // formData.append('ImageUrl1',document.getElementById("imageUpload").src);
+    // formData.append('ImageUrl1',document.getElementById("imageUpload1").src);
+    // formData.append('ImageUrl1',document.getElementById("imageUpload2").src);
+   
+    formData.forEach(function (value, key) {
+       alert(key + ": " + value);
+    });
     // alert(formData);
     // console.log(formData);
     event.preventDefault();
 
-    // formData.forEach(function (value, key) {
-    //     alert(key + ": " + value);
-    // });
   
     fetch(`https://localhost:7189/Home/ProductUpdate/${data1.itemID1}`, {
         method: 'PUT',

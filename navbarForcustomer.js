@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = `
-    <div class=" col-2 sidebar " style="background-color:rgb(108,117,125);height:1000px;position:fixed;z-index:10000">
+    <div class=" col-2 sidebar " style="background-color:rgb(108,117,125);height:100%;position:fixed;z-index:10000">
     <!-- Sidebar -->
    
        

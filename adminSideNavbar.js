@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = `
-         <div class="col-2 sidebar" style="background-color:rgb(123,165,251); height:1000px; position: fixed;">
+         <div class="col-2 sidebar" style="background-color:rgb(123,165,251); height:100%; position: fixed;">
             <!-- Sidebar -->
             <div id="logo" style="margin-top:40px;margin-left:40%;">
             <img class="w-sm-2" id="auctionProImg" src="./image/image.png" width="80" style="border-radius:50px;" >
