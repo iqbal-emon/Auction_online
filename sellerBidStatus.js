@@ -97,7 +97,7 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
 
 
                             if(outputDateString<itemDetail.endTime){
-                                biddingGo.textContent="Going On";
+                                biddingGo.textContent="Going";
                                 biddingGo.style.fontSize = '16px'; // Change '16px' to your desired font size
                                 biddingGo.style.fontWeight = 'bold';
                                 biddingGo.style.color='green';
@@ -122,7 +122,7 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                                             
                                             // paymentbtn.style.display = 'none';
                                            biddingGo.textContent=element.otp;
-                                           address.textContent=element.address;
+                                           address.textContent=element.address+"\n"+"Phone:"+element.phone;
                                            email1.textContent=element.email;
                                         }
                                     });

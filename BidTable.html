@@ -30,11 +30,42 @@
             color: black;
             /* background-color: transparent; */
         }
+        #biit:hover {
+          background-color: #4e5458;
+      /* color: gray; */
+    }
 </style>
 <!-- Link to Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body style="">
+<body >
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+  
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <!-- <h4 class="modal-title">Check Mail</h4>
+                <button type="button" class="close" onclick="closeDynamicModal"  data-dismiss="modal"></button> -->
+            </div>
+  
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <!-- <input type="text" class="form-control" id="inputValue"> -->
+              <h4 class="modal-title " id="modal12" style="text-align: center;">Check Mail</h4>
+                
+            </div>
+  
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary " id="modalBtn">OK</button>
+                <!-- <button type="button" class="btn btn-secondary" onclick="closeDynamicModal()" data-dismiss="modal">Close</button> -->
+            </div>
+  
+        </div>
+    </div>
+  </div>
+</div>
 <div class="container mt-5">
   <!-- Auction Item Card -->
   <div class="card">
@@ -117,7 +148,7 @@
             <input name="BidTime" type="hidden" class="form-control" id="auctionStartDate">
 
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary"  type="button" id="biit" >SUBMIT</button>
+                  <button class="btn btn-outline-secondary btn-secondary "  type="button" id="biit" style="color: white;" >SUBMIT</button>
 
                 </div>
               </div>

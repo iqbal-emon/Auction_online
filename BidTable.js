@@ -193,9 +193,17 @@ function setupBidEventListener() {
                         if (parseFloat(inputPrice.value) > priceContainer) {
                             submitBid();
                             flaggg++; // Update flaggg inside the loop
-                            alert("Your Bid is Added");
+                            // alert("Your Bid is Added");
+                            // document.querySelector("modal-title").textContent="Your Bid is Added";
+                            document.getElementById("modal12").textContent="Your Bid is Added  Successfully";
+
+                            $('#myModal').modal('show');
                         } else {
-                            alert("Bid More Than Max Price");
+                            // document.getElementById("modal-dialog").style.display = "block";
+                            // alert("Bid More Than Max Price");
+                            document.getElementById("modal12").textContent="Bid More Than Max Price";
+
+                            $('#myModal').modal('show');
                             
                         }
                     }
@@ -214,6 +222,11 @@ function setupBidEventListener() {
      
            
     });
+    document.getElementById("modalBtn").addEventListener('click',()=>{
+
+        $('#myModal').modal('hide');
+    })
+   
 }
 
 

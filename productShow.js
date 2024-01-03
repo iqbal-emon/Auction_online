@@ -21,7 +21,7 @@ fetch("https://localhost:7189/getCategory")
         .then(data1 => {
         
             console.log("Data received successfully:");
-            console.log(data1);
+            // console.log(data1);
 
          
             data1.forEach((data, index) => {
@@ -84,7 +84,7 @@ let updatedBtnclick=(data1,updatedProduct)=>{
 
 
 let handleButtonClick1 = (data1,updatedProduct) => {
-    console.log(data1);
+    // console.log(data1);
     // Store only the card index in sessionStorage
     // alert("btn there");
     sessionStorage.setItem('updatedProduct', data1.itemID1);
@@ -157,9 +157,9 @@ trashIcon.style.cursor = 'pointer'; // Add pointer cursor to indicate it's click
     // formData.append('ImageUrl1',document.getElementById("imageUpload1").src);
     // formData.append('ImageUrl1',document.getElementById("imageUpload2").src);
    
-    formData.forEach(function (value, key) {
-       alert(key + ": " + value);
-    });
+    // formData.forEach(function (value, key) {
+    //    alert(key + ": " + value);
+    // });
     // alert(formData);
     // console.log(formData);
     event.preventDefault();
@@ -211,7 +211,7 @@ fetch(`https://localhost:7189/Home/GetAllDetails/${userId}`)
         .then(data => {
         
             console.log("Data received successfully:");
-            console.log(data);
+            // console.log(data);
          
             data.forEach((item,index) => {
                // Create tbody element
@@ -257,7 +257,7 @@ imgElement.style.borderRadius = '10px';
 // tdImage.src = 'data:image/png;base64,' + item.imageField;
 imgElement.src = 'data:image/png;base64,' + item.imageField;
 tdImage.appendChild(imgElement);
-console.log(item.imageField);
+// console.log(item.imageField);
 tdStartTime.textContent=item.startTime;
 tdEndTime.textContent=item.endTime;
 ItemId.textContent=item.itemID1;

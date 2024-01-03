@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" href="./addCategory.html" >
+                            <a class="nav-link  text-white" href="./addCategory.html" >
                                 <i class="bi bi-plus"></i>
                                 <span class="d-none d-md-inline">Add Category</span>
                                
@@ -98,10 +98,10 @@ logOut.addEventListener('click',function(){
     // const status1=localStorage.getItem('isLoggedIn1', 'false');
 
 
-alert(status1);
-    alert(userId);
+// alert(status1);
+//     alert(userId);
     sessionStorage.removeItem('userId');
-    alert(userId);
+    // alert(userId);
 })
           
 });

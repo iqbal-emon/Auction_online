@@ -36,7 +36,7 @@ counter++;
     // alert(status1);
     
 
-                     window.location.href = './dashboardOfCustomer.html?id='+encodeURIComponent(id);
+                     window.location.href = './dashboardOfCustomer.html';
 
                 }
                 else if(element.username===getName.value&&element.password===getpassword.value&&element.flag=="1"){

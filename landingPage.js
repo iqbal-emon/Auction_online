@@ -30,7 +30,7 @@ counter++;
     var userId = element.userID; // Replace with your actual userId
     localStorage.setItem('isLoggedIn', 'true');
     sessionStorage.setItem('userId', userId);
-                     window.location.href = './productShow.html?id='+encodeURIComponent(id);
+                     window.location.href = './productShow.html';
 
                 }
                 else if(element.username===getName.value&&element.password===getpassword.value&&element.flag=="1"){

@@ -41,7 +41,7 @@ if (!isLoggedIn || isLoggedIn !== 'true') {
                     var tdEndTime = document.createElement('td');
                     tdEndTime.setAttribute('id', 'EndTime');
                     var paymentbtn = document.createElement('button');
-                    paymentbtn.setAttribute('class', 'btn btn-primary');
+                    paymentbtn.setAttribute('class', 'btn btn-secondary');
                     paymentbtn.textContent = "payment";
                     paymentbtn.style.marginTop = '4px';
                     paymentbtn.addEventListener('click', function () {

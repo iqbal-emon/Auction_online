@@ -25,7 +25,8 @@ SignUpBtn.addEventListener('click', function (event) {
         Body: emailbody
     }).then(message => {
         if (message === "OK") {
-            alert("OTP sent to your email " + email.value);
+            document.getElementById("modalText").textContent="OTP sent to: " + email.value;
+
 
             // Display the modal
             $('#myModal').modal('show');

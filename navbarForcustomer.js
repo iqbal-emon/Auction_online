@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <nav class="w-100" style="padding-top: 50%">
         <div class="">
         <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active text-white" href="./dashboardOfCustomer.html" >
+        <li class="nav-item ">
+            <a class="nav-link  text-white" href="./dashboardOfCustomer.html" >
                 <i class="bi bi-list"></i>
                 <span class="d-none d-md-inline  md-font-weight-small">Dashboard</span>
               
