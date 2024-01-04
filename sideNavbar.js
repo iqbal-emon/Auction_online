@@ -66,7 +66,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Add click event listener to each list item
              
     }
-    
+    var userId = sessionStorage.getItem('userId');
+    fetch('https://localhost:7189/GetAllDetails')
+    .then(response => {
+        console.log("Raw Response:", response);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        return response.json(); // assuming the response is in JSON format
+    })
+    .then(data => {
+        console.log("Data received successfully:");
+        console.log(data);
+
+
+        // console.log(getName.value);
+        data.forEach(element => {
+if(userId==element.userID){
+// alert("hello");
+document.getElementById("auctionProImg").src='data:image/png;base64,'+element.imageField;
+}
+});
+});
+document.getElementById("auctionPro").textContent=localStorage.getItem('userName');
 
      // Get the current page URL
      var currentPage = window.location.href;
@@ -94,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-          var userId = sessionStorage.getItem('userId');
 const logOut=document.getElementById("Logout");
 logOut.addEventListener('click',function(){
     window.history.replaceState(null, null, './loginPage.html')

@@ -1,5 +1,5 @@
 var CustomerID = sessionStorage.getItem('CustomerID');
-alert(CustomerID);
+// alert(CustomerID);
 const isLoggedIn = localStorage.getItem('isLoggedIn1');
 if (!isLoggedIn || isLoggedIn !== 'true') {
 

@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Sidebar -->
    
        
-    <div id="logo" style="margin-top:40px;margin-left:40%;">
-    <img class="w-sm-2" id="auctionProImg" src="./image/image.png" width="80" style="border-radius:50px;" >
+    <div  style="margin-top:40px;margin-left:40%;">
+    <img  id="auctionProImg"   width="80" style="border-radius:70px;" >
     <h5 id="auctionPro">Auction Pro </h5>
      </div>
     <nav class="w-100" style="padding-top: 50%">
@@ -78,7 +78,38 @@ document.addEventListener("DOMContentLoaded", function () {
             if (navbarContainer) {
                 navbarContainer.innerHTML = navbar;
           }
+          var userId = sessionStorage.getItem('CustomerID');
 
+          fetch('https://localhost:7189/GetAllDetails1')
+          .then(response => {
+              console.log("Raw Response:", response);
+  
+              if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+  
+              return response.json(); // assuming the response is in JSON format
+          })
+          .then(data => {
+              console.log("Data received successfully:");
+              console.log(data);
+      
+  
+              // console.log(getName.value);
+              data.forEach(element => {
+if(userId==element.customerID){
+    // alert("hello");
+    document.getElementById("auctionProImg").src='data:image/png;base64,'+element.imageField;
+}
+});
+});
+document.getElementById("auctionPro").textContent=localStorage.getItem('userName');
+
+
+
+
+// alert(localStorage.getItem('userName'));
+// document.getElementById("auctionProImg").src='data:image/png;base64,' +localStorage.getItem('imageFied');
 
           var currentPage = window.location.href;
 
@@ -98,8 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
      
               }
           }
-
-          var userId = sessionStorage.getItem('CustomerID');
 const logOut=document.getElementById("Logout");
 logOut.addEventListener('click',function(){
     window.location.href = './LogInForCustomer.html';

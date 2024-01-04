@@ -31,6 +31,11 @@ counter++;
                 //  alert(id);
     var CustomerID = element.customerID; // Replace with your actual userId
     sessionStorage.setItem('CustomerID', CustomerID);
+    // var userName=element.username;
+    localStorage.setItem('userName',element.username);
+    localStorage.setItem('imageFied',element.imageField);
+
+    // alert(localStorage.getItem('userName'));
     localStorage.setItem('isLoggedIn1', 'true');
     let status1 = localStorage.getItem('isLoggedIn1');
     // alert(status1);
