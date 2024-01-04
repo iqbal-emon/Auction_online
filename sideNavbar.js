@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = `
 
-    <div class="col-2 sidebar" style="background-color:#486079;height:1000px;position:fixed;height:100%">
+    <div class="col-2 sidebar" style="background-color:#486079;position:fixed;height:100%">
     <!-- Sidebar -->
     <div id="logo" style="margin-top:40px;margin-left:40%;">
-    <img class="w-sm-2" id="auctionProImg" src="./image/image.png" width="80" style="border-radius:50px;" >
+    <img class="w-sm-2" id="auctionProImg" src="./image/image.png" width="80" style="border-radius:100%;" >
     <h5 id="auctionPro">Auction Pro </h5>
      </div>
     <nav class="w-100" style="padding-top: 50%">

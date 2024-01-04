@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
    
        
     <div  style="margin-top:40px;margin-left:40%;">
-    <img  id="auctionProImg"   width="80" style="border-radius:70px;" >
+    <img  id="auctionProImg"   width="80" style="border-radius:100%;" >
     <h5 id="auctionPro">Auction Pro </h5>
      </div>
     <nav class="w-100" style="padding-top: 50%">
